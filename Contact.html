@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title style="font-weight: bolder;">RAH</title>    
+    <link rel="icon" type="image/x-icon" href="images/Daco_3321762.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-hiking"></i>    راہ</a>
+        <nav class="navbar">
+            <div id="nav-close" class="fas fa-times"></div>
+            <a href="Home.html">home</a>
+            <a href="Adventure.html">Adventure</a>
+            <a href="Packages.html">packages</a>
+            <a href="Contact.html">contact</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div> 
+            <div id="search-btn" class="fas fa-search"></div>
+          
+        </div>
+    </header>
+    
+    <Br><Br><Br><Br><Br><Br>
+        <div class="search-form">
+            <div id="close-search" class="fas fa-times"></div>
+            <form action="">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+            </form>
+        </div>
+    
+    <section class="contact" id="contact">
+        <div class="wrapper1">
+            <div class="title1">
+                <h1>contact us form</h1>
+            </div>
+            <div class="contact-form">
+                <form method="post" action="contact_us.php" onsubmit="return validateForm()">
+                    <div class="input-fields">
+                        <input type="text" class="input" placeholder="Name" name="name" id="name">
+                        <input type="email" class="input" placeholder="Email Address" name="email" id="email" pattern=".+@gmail\.com">
+                        <input type="text" class="input" placeholder="Phone" name="phone" id="phone">
+                        <input type="text" class="input" placeholder="Subject" name="subject" id="subject">
+                    </div>
+                    <div class="msg">
+                        <textarea placeholder="Message" name="message" id="message"></textarea>
+                        <div class="btn1">
+                            <button type="submit">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </section>
+    
+    <section class="footer">
+        <div class="box-container">
+    
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="#home">home</a>    
+                <a href="#packages">packages</a>
+                <a href="#query">query</a>
+            </div>
+    
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#contact">ask questions</a>
+                <a href="#">terms of use</a>
+                <a href="#">privacy policy</a>
+            </div>
+    
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="tel:+923305678365"> <i class="fas fa-phone"></i> +92 330 5678365 </a>
+                <a href="mailto: RAH.com"> <i class="fas fa-envelope"></i> RAH.com </a>
+                <a href="#"> <i class="fas fa-map"></i> UET, Taxila </a>
+            </div>
+    
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="https://www.facebook.com/RAH"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="https://www.instagram.com/RAH"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="https://www.linkedin.com/in/RAH/"> <i class="fab fa-linkedin"></i> linkedin </a>
+                <a href="https://github.com/RAH"> <i class="fab fa-github"></i> github </a>
+            </div>
+        </div>
+        <div class="credit">created by <span> Rida, Ammad & Hammad </span> | all rights reserved!</div>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script>
+
+        function validateForm() {
+            var name = document.getElementById('name');
+            var email = document.getElementById('email');
+            var phone = document.getElementById('phone');
+            var subject = document.getElementById('subject');
+            var message = document.getElementById('message');
+            
+            if (name.value.trim() === '') {
+                alert('Please enter your name');
+                name.focus();
+                return false;
+            }
+            
+            if (email.value.trim() === '') {
+                alert('Please enter your email address');
+                email.focus();
+                return false;
+            }
+            
+            if (phone.value.trim() === '') {
+                alert('Please enter your contact number');
+                phone.focus();
+                return false;
+            }
+            
+            if (subject.value.trim() === '') {
+                alert('Please enter subject');
+                subject.focus();
+                return false;
+            }
+
+            if (message.value.trim() === '') {
+                alert('Please enter your message');
+                message.focus();
+                return false;
+            }
+            else {
+                alert('You will soon be contacted on your mobile number')
+            }
+            // Add more validation rules as needed
+            
+            return true;
+        }
+        
+        // Add event listeners for real-time validation
+        window.addEventListener('load', function() {
+            var name = document.getElementById('name');
+            var email = document.getElementById('email');
+            var phone = document.getElementById('phone');
+            
+            name.addEventListener('input', function() {
+                validateName();
+            });
+            
+            email.addEventListener('input', function() {
+                validateEmail();
+            });
+            
+            phone.addEventListener('input', function() {
+                validatePhone();
+            });
+        });
+        
+        // Additional validation functions
+        function validateName() {
+            var name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                name.classList.add('error');
+            } else {
+                name.classList.remove('error');
+            }
+        }
+        
+        function validateEmail() {
+            var email = document.getElementById('email');
+            if (email.value.trim() === '') {
+                email.classList.add('error');
+            } else {
+                email.classList.remove('error');
+            }
+        }
+        
+        function validatePhone() {
+            var phone = document.getElementById('phone');
+            if (phone.value.trim() === '') {
+                phone.classList.add('error');
+            } else {
+                phone.classList.remove('error');
+            }
+        }
+    </script>
+</body>
+</html>
